@@ -13,3 +13,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db.vm.provision :shell, path: "db_provision.sh"
   end
 end
+

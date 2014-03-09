@@ -7,3 +7,4 @@ rm -rf /var/www
 ln -fs /vagrant /var/www
 echo "Hello, Auto Provisioning." > /vagrant/index.html
 echo "Apache provisioning end ..."
+

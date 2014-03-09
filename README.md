@@ -8,7 +8,7 @@ Vagrant初心者向けに解説するよ！
 1. [Hello, Vagrant!](https://github.com/tmknom/study-vagrant/tree/master/study1)
 1. [Vagrantの基本コマンドと設定](https://github.com/tmknom/study-vagrant/tree/master/study2)
 1. [自動プロビジョニングに挑戦！](https://github.com/tmknom/study-vagrant/tree/master/study3)
-1. [複数サーバを一発で立ち上げる](https://github.com/tmknom/study-vagrant/tree/master/study4)
+1. [複数サーバを一発で立ち上げる！](https://github.com/tmknom/study-vagrant/tree/master/study4)
 1. [プラグインとボックス](https://github.com/tmknom/study-vagrant/tree/master/study5)
 
 
