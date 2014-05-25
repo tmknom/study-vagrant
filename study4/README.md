@@ -82,7 +82,7 @@ PING 192.168.33.1 (192.168.33.1) 56(84) bytes of data.
 ...
 ```
 
-プライベートネットワークを使えば、仮想マシン間で直接通信することができるぞ！
+プライベートネットワークを使えば、仮想マシン間で直接通信することができるのだ！
 
 
 
@@ -241,6 +241,8 @@ ln -fs /vagrant /var/www
 次にDBサーバ向けに *db_provision.sh* を作成しよう。
 
 ```bash
+#!/usr/bin/env bash
+
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y mysql-server
