@@ -16,6 +16,16 @@ $ vagrant init precise64 http://files.vagrantup.com/precise64.box
 $ vagrant up
 ```
 
+ちなみに、Vagrantfileのコメントが邪魔くさい人は、↓をコピペして、自力でVagrantfileを作ってもらってもOKだ。
+
+```ruby
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+end
+```
+
 ## 最小限抑えておくべきコマンド
 
 ### 状態の確認
@@ -147,12 +157,23 @@ $ vagrant up
 $ vagrant ssh
 ```
 
+### Vagrantfileの設定の反映
+
+Vagrantfileを修正したら実行するコマンド。
+
+```bash
+$ vagrant reload
+```
+
+Vagrantfile修正して終わった気になったのに、反映されねぇぞ(ﾟДﾟ)ｺﾞﾙｧ！って時には大抵このコマンドを叩き忘れてる。
+
+
 
 ## Vagrantfile事始め
 
 ### 設定の記述方法
 
-Vagrantの設定は **Vagrantfile** に記述。
+すでに学んだ通り、Vagrantの設定は **Vagrantfile** に記述するよ！
 
 ```ruby
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -161,16 +182,6 @@ end
 ```
 
 ちなみに、Vagrantfileがあるディレクトリを**プロジェクトディレクトリ**って言ったりするから覚えておこう。
-
-### 設定の反映方法
-
-設定を修正したら、それを反映しよう。
-
-```bash
-$ vagrant reload
-```
-
-設定ファイルだけ修正して終わった気になって、このコマンドを打つのをよく忘れるので注意！
 
 
 
@@ -184,6 +195,8 @@ $ vagrant reload
 
 ```bash
 $ date > synced_file
+$ ls
+Vagrantfile	synced_file
 $ cat synced_file
 2014年 3月 7日 金曜日 08時26分33秒 JST
 $ vagrant ssh
@@ -191,6 +204,7 @@ vagrant@precise64:~$ ls /vagrant/
 synced_file  Vagrantfile
 vagrant@precise64:~$ cat /vagrant/synced_file
 2014年 3月 7日 金曜日 08時26分33秒 JST
+vagrant@precise64:~$ exit
 ```
 
 確かに共有されてるね！
@@ -210,7 +224,7 @@ $ echo "hello, guest" > host_dir/from_host.txt
 config.vm.synced_folder "host_dir/", "/guest_dir"
 ```
 
-を追記。じゃあ、確認してみよう。
+を追記。じゃあ、設定を反映して、確認してみよう。
 
 ```bash
 $ vagrant reload
@@ -237,7 +251,9 @@ $ cat host_dir/from_guest.txt
 hello, host
 ```
 
-この機能を使えば、ソースの修正はいつも使ってるエディタでやって、動作の確認は仮想マシンで、なーんてのも楽勝だよね。
+この機能を使えば、ソースの修正はいつも使ってるエディタで。
+
+動作の確認は仮想マシンで、なーんてのも楽勝だよね。
 
 さて、２点ほど注意点。
 
@@ -250,7 +266,7 @@ hello, host
 
 ### 基本的なネットワーク設定
 
-ネットワーク設定も簡単。
+ネットワーク設定も簡単！簡単！
 
 ```ruby
 config.vm.network :forwarded_port, guest: 80, host: 8080
@@ -271,7 +287,14 @@ Serving HTTP on 0.0.0.0 port 80 ...
 
 ホスト側でブラウザを立ち上げて、<http://localhost:8080/>を開いてみよう。
 
-「Hello, Vagrant.」って表示されれば完璧！
+「Hello, Vagrant.」って表示されれば完璧だ！
 
 ネットワークの設定は後で、もう少し詳しい内容をやるよ。
+
+じゃあ、最後に「 **Ctrl+C** 」でHTTPサーバを終了して後始末をしておこう。
+
+```bash
+vagrant@precise64:~/vagrant$ exit
+$ vagrant destroy --force
+```
 
