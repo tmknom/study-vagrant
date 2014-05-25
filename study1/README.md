@@ -66,7 +66,14 @@ Vagrantfileを見てみる
 
 Vagrantの設定は、**Vagrantfile** に記述していくよ！
 
-実は*vagrant init*コマンドを叩いた時に作成されてるのでとりあず現状を確認。
+実は*vagrant init*コマンドを叩いた時に勝手に作成されているだ。
+
+```bash
+$ ls
+Vagrantfile
+```
+
+じゃあ、中身を見てみよう。
 
 ```bash
 $ cat Vagrantfile
