@@ -45,23 +45,22 @@ $ vagrant up
 
 ```bash
 $ vagrant ssh
-vagrant@precise64:~$ sudo apt-get update
 vagrant@precise64:~$ sudo apt-get install -y apache2
 vagrant@precise64:~$ sudo rm -rf /var/www
 vagrant@precise64:~$ sudo ln -fs /vagrant /var/www
 vagrant@precise64:~$ exit
-$ echo "Hello,Apache2." > index.html
+$ echo "Hello, Manual Provisioning." > index.html
 ```
 
 ここでやってることを軽く解説。
 
-1. *apt-get*コマンドでインストール
+1. *apt-get*コマンドでApache2をインストール
 1. Apache2のルートディレクトリの*/var/www*に対し、ゲスト側のデフォルト共有ディレクトリである*/vagrant*からシンボリックリンクを張る
 1. 共有ディレクトリに動作確認用のHTMLファイルを作成
 
 んでは、確認のためにブラウザで<http://localhost:8080/>を開いてみよう。
 
-「Hello,Apache2.」って表示されてれば成功だ！
+「Hello, Manual Provisioning.」って表示されてれば成功だ！
 
 
 ## 自動プロビジョニングでApacheをセットアップ
@@ -76,7 +75,6 @@ OK、今度は手動設定した内容を完全自動化するよ！
 #!/usr/bin/env bash
 
 echo "Apache provisioning start ..."
-apt-get update
 apt-get install -y apache2
 rm -rf /var/www
 ln -fs /vagrant /var/www
@@ -84,7 +82,7 @@ echo "Hello, Auto Provisioning." > /vagrant/index.html
 echo "Apache provisioning end ..."
 ```
 
-さっきと違い*sudo*がないのは、Vagrantはこのスクリプトをrootとして実行するため。
+さっきと違い*sudo*がないのは、Vagrantはこのスクリプトをrootとして実行するからだよ。
 
 また、indexファイルの出力先は*/vagrant*ディレクトリ配下にしてることに注意。
 
@@ -136,7 +134,7 @@ $ vagrant up
 </span>
 
 
-これで僕たちは開発環境を完全に自動生成する術を手に入れた。
+これで僕たちは開発環境のセットアップを完全に自動化する能力を手に入れたことになるぞ！
 
 プロジェクトに新しいメンバーが来た時にやることは、*git clone*して、*vagrant up*するだけだ！
 
