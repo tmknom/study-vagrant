@@ -45,6 +45,7 @@ $ vagrant up
 
 ```bash
 $ vagrant ssh
+vagrant@precise64:~$ sudo apt-get update
 vagrant@precise64:~$ sudo apt-get install -y apache2
 vagrant@precise64:~$ sudo rm -rf /var/www
 vagrant@precise64:~$ sudo ln -fs /vagrant /var/www
@@ -75,6 +76,7 @@ OK、今度は手動設定した内容を完全自動化するよ！
 #!/usr/bin/env bash
 
 echo "Apache provisioning start ..."
+apt-get update
 apt-get install -y apache2
 rm -rf /var/www
 ln -fs /vagrant /var/www
