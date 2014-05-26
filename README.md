@@ -5,9 +5,9 @@ Vagrant初心者向けに解説するよ！
 
 ## 目次
 
-1. [Hello, Vagrant!](https://github.com/tmknom/study-vagrant/tree/master/study1)
-1. [Vagrantの基本コマンドと設定](https://github.com/tmknom/study-vagrant/tree/master/study2)
-1. [自動プロビジョニングに挑戦！](https://github.com/tmknom/study-vagrant/tree/master/study3)
+1. [Vagrantの世界へようこそ！](https://github.com/tmknom/study-vagrant/tree/master/study1)
+1. [基本コマンドとVagrantfileによる設定](https://github.com/tmknom/study-vagrant/tree/master/study2)
+1. [自動プロビジョニングに挑戦しよう](https://github.com/tmknom/study-vagrant/tree/master/study3)
 1. [複数サーバを一発で立ち上げる！](https://github.com/tmknom/study-vagrant/tree/master/study4)
 1. [プラグインとボックス](https://github.com/tmknom/study-vagrant/tree/master/study5)
 
@@ -32,8 +32,8 @@ Vagrant初心者向けに解説するよ！
  * VirtualBox：<https://www.virtualbox.org/>
  * Macの場合、インストール方法は普通のアプリと同じ
 * 確認したバージョン
- * Vagrant：1.4.3
- * VirtualBox：4.3.6
+ * Vagrant：1.6.2
+ * VirtualBox：4.3.12
 
 
 ## 注意事項
@@ -43,8 +43,4 @@ Vagrant初心者向けに解説するよ！
  * エラーメッセージを読みながら、デバッグすると、学習効果が飛躍的に高まるぞ！
 * セキュリティ？なにそれ美味しいのって感じなので、そのつもりで
  * あくまで勉強用なんだからね！＞＜
-
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="tmknom" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
