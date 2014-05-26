@@ -25,8 +25,26 @@ $ vagrant init precise64 http://files.vagrantup.com/precise64.box
 
 ではボックスを自分で作ってみよう。
 
-ここでは、study5で作成した *sl* コマンドインストール済みのボックスを作成してみよう。といっても、やることは
+まずはいつも通りの下準備から。
 
+```bash
+$ mkdir study6
+$ cd study6
+$ vagrant init precise64 http://files.vagrantup.com/precise64.box
+$ vagrant up
+```
+
+ここでは、study5同様 *sl* コマンドをインストールしたボックスを作成してみよう。
+
+では、ゲスト側にログインして、サクッと *sl* コマンドをインストール。
+
+```bash
+$ vagrant ssh
+vagrant@precise64:~$ sudo apt-get install sl
+vagrant@precise64:~$ exit
+```
+
+ベースとなるOSが完成したので、ボックスを作成してみよう。といっても、やることは
 
 ```bash
 $ vagrant package
@@ -87,7 +105,6 @@ $ rm Vagrantfile
 では、先ほど作ったボックスを使ってみよう。
 
 ここでのポイントは、*vagrant init* の引数に、さっき作ったボックスを指定することだ！
-
 
 ```bash
 $ vagrant init i-love-sl
