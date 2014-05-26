@@ -1,5 +1,5 @@
-プラグインとボックス
-============================
+プラグインを活用しよう
+======================
 
 ## プラグインの基礎知識
 
@@ -10,7 +10,7 @@ Vagrantはプラグインで機能拡張ができる。
 簡単ではあるけど、プラグインの基本コマンドを確認しよう。
 
 
-### プラグインのインストール／アンインストール
+### インストール／アンインストール
 
 コマンドはたったこれだけ。
 
@@ -148,125 +148,9 @@ sahara以外の特に便利なプラグインを紹介するぞ！
  * *vagrant up* をしたときにVirtualBoxのGuest Additionが古いってwarningが出た時に。
  * これを使うと、Guest Additionを新しくしてウザいwarningを消してくれる。
 
+もちろん、ここで紹介した以外にも色々なプラグインが公開されてるので、積極的に探してみよう。
 
+ここでは紹介しないけど、自分でプラグインを自作することもできるぞ！
 
-## ボックス
-
-ボックスは、Vagrantが作成する環境のベースになるイメージだ。
-
-必ずインストールするモノがある場合は、*vagrant up* をするたびにインストールするのではなく、
-事前にインストールが完了しているイメージファイルを作成することで、 *vagrant up* の時間を短縮できるぞ！
-
-実は、僕たちはすでにボックスを使用している。確認しよう。
-
-```bash
-$ vagrant box list
-precise64 (virtualbox)
-```
-
-*precise64 (virtualbox)* ってボックスがダウンロード済ってことだね。
-
-```bash
-$ vagrant init precise64 http://files.vagrantup.com/precise64.box 
-```
-
-今までオマジナイ的に叩いてきたこのコマンドの正体がコレだ。
-
-今度はボックスを自分で作ってみよう。
-
-ここでは、先ほど作成した *sl* コマンドインストール済みのボックスを作成してみよう。といっても、やることは
-
-
-```bash
-$ vagrant package
-```
-
-これだけだ。簡単だね！
-
-この処理は結構時間がかかるので気長に待とう。
-
-しばらく待てば、*package.box* というファイルができているはずだ。
-
-```bash
-$ ls
-Vagrantfile	package.box
-```
-
-バッチリだ！
-
-次にボックスを追加してみよう。
-
-```bash
-$ vagrant box add i-love-sl package.box
-...
-==> box: Successfully added box 'i-love-sl' (v0) for 'virtualbox'!
-```
-
-ここでは *i-love-sl* って名前のボックスを作ってみたよ。
-
-確認しよう。
-
-
-```bash
-$ vagrant box list
-i-love-sl           (virtualbox, 0)
-precise64           (virtualbox, 0)
-```
-
-ボックスが追加されてるね！
-
-では、このタイミングで後始末をしておこう。
-
-*du* コマンドで確認すると分かるけど、*package.box* はサイズが大きいので、忘れないうちに削除してしまおう。
-
-```bash
-$ du -h package.box
-340M    package.box
-$ rm package.box
-```
-
-新しく作ったボックスを試す前に、一旦クリーンアップしておこう。
-
-
-```bash
-$ vagrant destroy --force
-$ rm Vagrantfile
-```
-
-では、先ほど作ったボックスを使ってみよう。
-
-ここでのポイントは、*vagrant init* の引数に、さっき作ったボックスを指定することだ！
-
-
-```bash
-$ vagrant init i-love-sl
-$ vagrant up
-$ vagrant ssh
-vagrant@precise64:~$ sl
-```
-
-よし、OKだ！これでいつでも *sl* コマンド堪能することできる。最高だね！！
-
-最後に、ボックスの削除方法だけど
-
-
-```bash
-$ vagrant box remove i-love-sl
-...
-default (ID: 9104a6f794ba4913af22367bcceeaea2)
-
-Are you sure you want to remove this box? [y/N] y
-```
-
-こうすれば、削除される。確認しよう。
-
-```bash
-$ vagrant box list
-precise64 (virtualbox)
-```
-
-削除できた。
-
-ボックスは小さいものでも数百メガとかあって、ディスク領域の無駄なので、使わないものは削除しよう。
-
+興味のある人は[実践 Vagrant](http://www.oreilly.co.jp/books/9784873116655/)を読んでみるといい。
 
