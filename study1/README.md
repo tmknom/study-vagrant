@@ -1,5 +1,5 @@
-Hello, Vagrant!
-===============
+Vagrantの世界へようこそ！
+========================
 
 まずはVagrantを体験！
 
@@ -58,7 +58,7 @@ Are you sure you want to destroy the 'default' VM? [y/N] y
 
 本当に消していいか聞かれるけど気にせず **"y"** を入力
 
-はい、これで綺麗になりました。簡単すぐる！
+はい、これで綺麗になった。簡単すぐる！
 
 
 Vagrantfileを見てみる
@@ -66,7 +66,7 @@ Vagrantfileを見てみる
 
 Vagrantの設定は、**Vagrantfile** に記述していくよ！
 
-実は*vagrant init*コマンドを叩いた時に勝手に作成されているだ。
+実は*vagrant init*コマンドを叩いた時に勝手に作成されているのだ。
 
 ```bash
 $ ls
