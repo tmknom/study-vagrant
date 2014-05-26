@@ -11,6 +11,7 @@ Vagrant初心者向けに解説するよ！
 1. [複数サーバを一発で立ち上げる！](https://github.com/tmknom/study-vagrant/tree/master/study4)
 1. [プラグインを活用しよう](https://github.com/tmknom/study-vagrant/tree/master/study5)
 1. [ボックスを自作する](https://github.com/tmknom/study-vagrant/tree/master/study6)
+1. [Vagrant Shareでデモ環境を構築する！](https://github.com/tmknom/study-vagrant/tree/master/study7)
 
 ## 情報源
 
