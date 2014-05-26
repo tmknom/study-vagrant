@@ -148,9 +148,7 @@ sahara以外の特に便利なプラグインを紹介するぞ！
  * *vagrant up* をしたときにVirtualBoxのGuest Additionが古いってwarningが出た時に。
  * これを使うと、Guest Additionを新しくしてウザいwarningを消してくれる。
 
-もちろん、ここで紹介した以外にも色々なプラグインが公開されてるので、積極的に探してみよう。
+ここでは紹介しないけど、自分でプラグインを自作することもできる。
 
-ここでは紹介しないけど、自分でプラグインを自作することもできるぞ！
-
-興味のある人は[実践 Vagrant](http://www.oreilly.co.jp/books/9784873116655/)を読んでみるといい。
+興味のある人は[実践 Vagrant](http://www.oreilly.co.jp/books/9784873116655/)を読むことをオススメ！
 
