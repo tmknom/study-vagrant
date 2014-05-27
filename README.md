@@ -24,14 +24,23 @@ Vagrant初心者向けに解説するよ！
  * 日本語でまとまった情報が読める貴重な書籍。
  * とても分かりやすいので、ぜひ読もう！
 
+## 事前準備
 
-## 前提条件
+1.VirtualBoxのインストール
+ * <https://www.virtualbox.org/>
 
-* 動作確認は全てMac OS X
-* VagrantとVirtualBoxはインストールしといてね
- * Vagrant：<http://www.vagrantup.com/>
- * VirtualBox：<https://www.virtualbox.org/>
- * Macの場合、インストール方法は普通のアプリと同じ
+2.Vagrantのインストール
+ * <http://www.vagrantup.com/>
+
+3.使用する仮想OSのイメージファイル(Box)のダウンロードコマンドの実行
+```bash
+ $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
+```
+
+
+## 想定環境 
+
+* Mac OS X
 * 確認したバージョン
  * Vagrant：1.6.2
  * VirtualBox：4.3.12
