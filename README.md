@@ -13,16 +13,6 @@ Vagrant初心者向けに解説するよ！
 1. [ボックスを自作する](https://github.com/tmknom/study-vagrant/tree/master/study6)
 1. [Vagrant Shareでデモ環境を構築する！](https://github.com/tmknom/study-vagrant/tree/master/study7)
 
-## 情報源
-
-* 公式ドキュメント
- * <http://docs.vagrantup.com/v2/>
- * 動かないぞ(ﾟДﾟ)ｺﾞﾙｧ！って場合にはココを確認しよう。英語だけどね :-)
- * だいたいの問題は公式ドキュメントで解決する。あとはググれ。
-* 実践 Vagrant
- * <http://www.oreilly.co.jp/books/9784873116655/>
- * 日本語でまとまった情報が読める貴重な書籍。
- * とても分かりやすいので、ぜひ読もう！
 
 ## 事前準備
 
@@ -54,3 +44,14 @@ Vagrant初心者向けに解説するよ！
 * セキュリティ？なにそれ美味しいのって感じなので、そのつもりで
  * あくまで勉強用なんだからね！＞＜
 
+
+## 情報源
+
+* 公式ドキュメント
+ * <http://docs.vagrantup.com/v2/>
+ * 動かないぞ(ﾟДﾟ)ｺﾞﾙｧ！って場合にはココを確認しよう。英語だけどね :-)
+ * だいたいの問題は公式ドキュメントで解決する。あとはググれ。
+* 実践 Vagrant
+ * <http://www.oreilly.co.jp/books/9784873116655/>
+ * 日本語でまとまった情報が読める貴重な書籍。
+ * とても分かりやすいので、ぜひ読もう！
