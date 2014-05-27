@@ -14,7 +14,7 @@ Vagrant Shareでデモ環境を構築する！
 ![Vagrant Cloud Sign Up](http://cdn-ak.f.st-hatena.com/images/fotolife/t/tmknom/20140311/20140311213608.png "Vagrant Cloud Sign Up")
 
 
-## Vagrantfile作成＆仮想マシンの立ち上げ
+## Vagrant Shareでデモ環境を構築
 
 HTTPサーバが必要なので、Vagrantfileにその設定を記述しよう。
 
@@ -44,12 +44,7 @@ Vagrantfileを作成したら、いつも通り
 $ vagrant up
 ```
 
-で、仮想マシンを立ち上げる。
-
-
-## vagrant login
-
-事前準備が整ったので、*vagrant login* コマンドを叩こう。
+次に[Vagrant Cloud](https://vagrantcloud.com/)に登録したアカウントでログインする。
 
 ```bash
 $ vagrant login
@@ -61,14 +56,9 @@ Password (will be hidden):＜パスワード入力＞
 You're now logged in!
 ```
 
-もちろんユーザ名とパスワードは、[Vagrant Cloud](https://vagrantcloud.com/)に登録したものだ。
+ユーザ名とパスワードを入力し、*You're now logged in!* って表示されてればログインOKだ！
 
-*You're now logged in!* って表示されてればログインOK。
-
-
-##  vagrant share
-
-では、*vagrant share* コマンドでシェアしてみよう。
+すべての準備が整ったので、実際にシェアしてみよう。
 
 ```bash
 $ vagrant share
@@ -88,21 +78,18 @@ $ vagrant share
 
 この例だと *http://lively-bunny-1387.vagrantshare.com* がそれだね。
 
-このURLは毎回変わるので、試すときは、実際に手元で表示されてるURLを使ってね。
+このURLは毎回変わるので、試すときは、実際に手元で表示されてるURLを使ってほしい。
 
 
-##  動作確認
+## 構築したデモを試してみる
 
-じゃあ、URLをコピってブラウザで表示してみよう。
+じゃあ、表示されたURLをコピってブラウザで表示してみよう。
 
-**Hello, Vagrant Cloud.** って表示されてれば成功だ！
+「Hello, Vagrant Cloud.」って表示されてれば成功だ！
 
 普通にスマホとかからもアクセスできて超絶便利。
 
-
-## 終了方法
-
-いらなくなったら停止しよう。
+最後に、いらなくなったら停止しよう。
 
 ```bash
 Ctrl + C
